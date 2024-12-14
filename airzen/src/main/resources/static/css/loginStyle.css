@@ -1,0 +1,78 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(bg_new.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.loginContainer {
+    width: 360px; /* Reduced width */
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px 30px; /* Reduced padding */
+}
+
+h1 {
+    font-size: 28px; /* Reduced font size */
+    text-align: center;
+    color: #19A7CE;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 45px; /* Reduced height */
+    margin: 20px 0; /* Reduced margin */
+}
+
+input {
+    width: 100%;
+    height: 90%;
+    background: transparent;
+    outline: none;
+    border: 2px solid #0000001e;
+    border-radius: 30px; /* Reduced border radius */
+    font-size: 14px; /* Reduced font size */
+    color: #333;
+    padding: 15px 40px 15px 15px; /* Reduced padding */
+}
+
+input::placeholder {
+    color: #333;
+}
+
+i {
+    position: absolute;
+    right: 15px; /* Adjusted position */
+    top: 23%;
+    transform: translate(-50%);
+    font-size: 18px; /* Reduced icon size */
+    color: #333;
+}
+
+.btn {
+    width: 100%;
+    height: 40px; /* Reduced height */
+    background: #2D9596;
+    border: none;
+    outline: none;
+    border-radius: 30px; /* Reduced border radius */
+    box-shadow: 0 0 8px rgba(0, 0, 0, .1); /* Adjusted shadow */
+    cursor: pointer;
+    font-size: 14px; /* Reduced font size */
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #2D9596;
+    color: #fff;
+}

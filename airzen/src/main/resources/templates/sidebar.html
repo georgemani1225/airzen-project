@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<aside id="sidebar" th:fragment="sidebar">
+		<div class="d-flex">
+			<div class="sidebar-image">
+				<i class='bx bxs-plane-alt'></i>
+			</div>
+			<div class="sidebar-logo">
+				<a href="#">AirZen</a>
+			</div>
+		</div>
+		<ul class="sidebar-nav">
+
+			<li class="sidebar-item"><a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+					data-bs-target="#member" aria-expanded="false" aria-controls="member">
+					<i class="lni lni-user"></i> <span>Member</span>
+				</a>
+				<ul id="member" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+					<li class="sidebar-item"><a href="http://localhost:8080/airzen/home" class="sidebar-link">Enroll
+							Member</a>
+					</li>
+					<li class="sidebar-item"><a href="http://localhost:8080/airzen/search" class="sidebar-link">Member
+							Details</a>
+					</li>
+					<li class="sidebar-item"><a href="http://localhost:8080/airzen/membersummary"
+							class="sidebar-link">Member Summary</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="sidebar-item"><a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+					data-bs-target="#earn" aria-expanded="false" aria-controls="earn">
+					<i class="lni lni-revenue"></i><span>Earn Points</span>
+				</a>
+				<ul id="earn" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+					<li class="sidebar-item"><a href="http://localhost:8080/airzen/earn/earnAir"
+							class="sidebar-link">Earn
+							Points - Air</a>
+					</li>
+					<li class="sidebar-item"><a href="http://localhost:8080/airzen/earn/earnList"
+							class="sidebar-link">View
+							Earn Details</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="sidebar-item"><a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+					data-bs-target="#redeem" aria-expanded="false" aria-controls="redeem">
+					<i class='bx bxs-gift'></i><span>Redeem Points</span>
+				</a>
+				<ul id="redeem" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+					<li class="sidebar-item"><a href="http://localhost:8080/airzen/redeem/redeemPoints"
+							class="sidebar-link">Airzen Hotels</a>
+					</li>
+					<li class="sidebar-item"><a href="http://localhost:8080/airzen/redeem/redeemList"
+							class="sidebar-link">View Redemptions</a>
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+		<div class="sidebar-footer">
+			<a href="http://localhost:8080/login?logout" class="sidebar-link"> <i class="lni lni-exit"></i>
+				<span>Logout</span>
+			</a>
+			</form>
+		</div>
+	</aside>
+
+</body>
+
+</html>

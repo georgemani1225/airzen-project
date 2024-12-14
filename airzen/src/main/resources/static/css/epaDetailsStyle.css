@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+h2 {
+	font-weight: 600;
+	font-size: 18px;
+	font-family: 'Poppins', sans-serif;
+}
+
+label {
+	font-size: 12px;
+}
+
+.homeContainer {
+	display: flex;
+}
+
+.memberContainer {
+	background-color: #ffffff;
+	border-radius: 6px;
+	margin-top: 20px;
+	width: 850px;
+}
+
+.main {
+	min-height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	background-color: #ebebeb;
+}
+
+input {
+	width: 180px;
+	height: 32px;
+	background: transparent;
+	outline: none;
+	border: 2px solid #0000001e;
+	border-radius: 20px;
+	font-size: 13px;
+	color: #333;
+	padding: 8px;
+}
+
+.mn-label {
+	display: block;
+	margin: 5px;
+	font-size: 12px;
+}
+
+.mem-no {
+	display: flex;
+	margin-top: 15px;
+	height: 85px;
+	margin-left: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.btn {
+	width: 80px;
+	height: 30px;
+	background: #19A7CE;
+	border: none;
+	outline: none;
+	border-radius: 40px;
+	font-family: Arial, Helvetica, sans-serif;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	cursor: pointer;
+	font-size: 14px;
+	color: #fff;
+	font-weight: 400;
+	margin: 25px 15px;
+}
+
+.goBtn {
+	width: 50px;
+}
+
+.btn:hover {
+	background-color: #19A7CE;
+	color: #fff;
+}
+
+.mem-pd {
+	margin-top: 15px;
+	margin-left: -100px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.pd-label {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	margin-left: 5px;
+	margin-right: 20px;
+}
+
+.form-fields {
+	display: flex;
+}
+
+.col1 {
+	margin-top: 10px;
+}
+
+.endcol {
+	margin-bottom: 10px;
+}
+
+.form-group {
+	margin-bottom: 1rem;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.form-group label {
+	display: block;
+	font-family: 'Poppins', sans-serif;
+	font-size: 13px;
+	margin-bottom: 2px;
+}
+
+.form-group input {
+	display: block;
+	font-family: 'Poppins', sans-serif;
+}
+
+.form-group select {
+	display: block;
+}
+
+select {
+	width: 180px;
+	height: 30px;
+	background: transparent;
+	outline: none;
+	font-family: 'Poppins', sans-serif;
+	border: 2px solid #0000001e;
+	border-radius: 20px;
+	font-size: 13px;
+	color: #333;
+	
+}
+
+input.disField {
+	background-color: #0000001e;
+}
+
+.errors {
+	border-color: #ff355b;
+}
+
+.toast-container {
+	margin-top: 15px;
+}
+
+.toast-body {
+	padding: 4px;
+	margin-left: 7px;
+}
+
+.toastSuccess {
+	margin-top: 15px;
+}
+
+.successBody {
+	padding: 8px;
+}
+
+.required:after {
+	content: " *";
+	color: #ff0000;
+}
+
+.wrapper {
+	display: flex;
+	gap: 15px;
+	font-family: 'Poppins', sans-serif;
+	margin-top: 15px;
+}
+
+.pointDetails {
+	width: 420px;
+	height: 220px;
+	display: flex;
+	flex-direction: column;
+	padding: 1em 0;
+	position: relative;
+	font-size: 14px;
+	border-radius: 0.5em;
+	background-color: #ffffff;
+}
+
+.pointDetails .text {
+	font-size: 16px;
+	margin-bottom: 0.2em;
+	font-weight: 600;
+	margin-left: 10px;
+	line-height: 1.1;
+}
+
+.points {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 5px;
+	padding: 10px;
+}
+
+.point-item {
+	padding: 5px;
+	border-radius: 5px;
+	text-align: center;
+	display: flex;
+	border: 1px solid #0000001e;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 70px;
+	margin: 5px;
+}
+
+.aznpnt-item {
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #dbeff9;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 70px;
+	margin: 5px;
+}
+
+.point-desc {
+	color: #666;
+	font-size: 0.9em;
+	margin-bottom: 5px;
+}
+
+.point-value {
+	color: #06c;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.tier {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 5px;
+	padding: 10px;
+}
+
+.tier-desc {
+	color: #666;
+	font-size: 0.9em;
+	margin-bottom: 5px;
+}
+
+.tier-value {
+	color: #06c;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.tierDetails {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.tierName {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.nextTier {
+	margin-left: 10px;
+}
+
+.rejrsn {
+	width: 350px;
+	height: 30px;
+	background: transparent;
+	outline: none;
+	border: 2px solid #0000001e;
+	border-radius: 20px;
+	font-size: 13px;
+	color: #333;
+	padding: 8px;
+}

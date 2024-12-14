@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+	<link rel="stylesheet" href="/css/homeStyle.css">
+	<link rel="stylesheet" href="/css/sidebarStyle.css">
+	<link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+
+</head>
+
+<body>
+	<div class="homeContainer">
+		<div th:replace="~{sidebar :: sidebar}"></div>
+		<div class="main p-3">
+			<h2>Member Enrollment</h2>
+			<div class="memberDetails enrMem">
+				<form novalidate="novalidate" id="member-form" action="#" th:action="@{/airzen/save}"
+					th:object="${memberDTO}" method="POST">
+					<div class="form form-section personal active">
+						<div class="details">
+							<span class="title">Personal Details</span>
+							<div class="row">
+								<div class="col-12 form-fields">
+									<div class="form-group">
+										<input type="hidden" th:field="*{id}" /> <label class="required">Title</label>
+										<select th:field="*{title}" required>
+											<option value="">Select One</option>
+											<option value="Mr">Mr</option>
+											<option value="Ms">Ms</option>
+											<option value="Mrs">Mrs</option>
+											<option value="Dr">Dr</option>
+										</select>
+									</div>
+
+									<div class="form-group">
+										<label class="required">First Name</label> <input type="text" id="firstname"
+											th:field="*{firstname}"
+											th:classappend="${#fields.hasErrors('firstname')?'errors':''}">
+									</div>
+
+									<div class="form-group">
+										<label class="required">Surname</label> <input type="text" th:field="*{surname}"
+											th:classappend="${#fields.hasErrors('surname')?'errors':''}">
+									</div>
+
+									<div class="form-group">
+										<label class="required">Date of Birth</label> <input type="text" id="date"
+											th:field="*{dob}" th:classappend="${#fields.hasErrors('dob')?'errors':''}">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 form-fields endCol">
+									<div class="form-group">
+										<label class="required">Gender</label> <select th:field="*{gender}"
+											th:classappend="${#fields.hasErrors('gender')?'errors':''}">
+											<option value="">Select One</option>
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+											<option value="Unknown">Unknown</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>Marital Status</label> <select th:field="*{marsta}">
+											<option value="">Select One</option>
+											<option value="Single">Single</option>
+											<option value="Married">Married</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="required">Nationality</label> <select th:field="*{nationality}"
+											th:classappend="${#fields.hasErrors('nationality')?'errors':''}">
+											<option value="">Select One</option>
+											<option value="IN">India</option>
+											<option value="AR">Argentina</option>
+											<option value="AU">Australia</option>
+											<option value="AT">Austria</option>
+											<option value="BD">Bangladesh</option>
+											<option value="BE">Belgium</option>
+											<option value="CA">Canada</option>
+											<option value="CN">China</option>
+											<option value="EG">Egypt</option>
+											<option value="FR">France</option>
+											<option value="GE">Germany</option>
+											<option value="JP">Japan</option>
+											<option value="MX">Mexico</option>
+											<option value="RU">Russia</option>
+											<option value="SA">South Africa</option>
+											<option value="UK">United Kingdom</option>
+											<option value="US">United States</option>
+											<option value="VN">Vietnam</option>
+											<option value="ZM">Zambia</option>
+											<option value="ZW">Zimbabwe</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>Tier</label> <select class="disField" id="tierEnable" th:field="*{tier}"
+											disabled>
+											<option value="Bronze">Bronze</option>
+											<option value="Silver">Silver</option>
+											<option value="Gold">Gold</option>
+											<option value="Platinum">Platinum</option>
+											<option value="Lifetime Platinum">Lifetime Platinum</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form form-section active contact">
+						<div class="details">
+							<span class="title">Contact Details</span>
+							<div class="row">
+								<div class="col-12 form-fields">
+									<div class="form-group">
+										<label class="required">Preferred Address</label> <select th:field="*{adrtyp}"
+											required>
+											<option value="">Select One</option>
+											<option value="H">Home Address</option>
+											<option value="B">Business Address</option>
+										</select>
+									</div>
+
+									<div class="form-group">
+										<label class="required">Address Line 1</label> <input type="text"
+											th:field="*{adrlinone}"
+											th:classappend="${#fields.hasErrors('adrlinone')?'errors':''}">
+									</div>
+
+									<div class="form-group">
+										<label class="required">Address Line 2</label> <input type="text"
+											th:field="*{adrlintwo}"
+											th:classappend="${#fields.hasErrors('adrlintwo')?'errors':''}">
+									</div>
+
+									<div class="form-group">
+										<label class="required">Town/City</label> <input type="text" th:field="*{twn}"
+											th:classappend="${#fields.hasErrors('twn')?'errors':''}">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 form-fields">
+									<div class="form-group">
+										<label class="required">District</label> <input type="text" th:field="*{dist}"
+											th:classappend="${#fields.hasErrors('dist')?'errors':''}">
+									</div>
+
+									<div class="form-group">
+										<label>State</label> <input type="text" th:field="*{stt}"
+											th:classappend="${#fields.hasErrors('stt')?'errors':''}">
+									</div>
+
+									<div class="form-group">
+										<label class="required">Country</label> <select th:field="*{ctry}"
+											th:classappend="${#fields.hasErrors('ctry')?'errors':''}" id="ctrySelect">
+											<option value="">Select One</option>
+											<option value="+91">India</option>
+											<option value="+54">Argentina</option>
+											<option value="+61">Australia</option>
+											<option value="+43">Austria</option>
+											<option value="+880">Bangladesh</option>
+											<option value="+32">Belgium</option>
+											<option value="+1">Canada</option>
+											<option value="+86">China</option>
+											<option value="+20">Egypt</option>
+											<option value="+33">France</option>
+											<option value="+49">Germany</option>
+											<option value="+81">Japan</option>
+											<option value="+52">Mexico</option>
+											<option value="+7">Russia</option>
+											<option value="+27">South Africa</option>
+											<option value="+44">United Kingdom</option>
+											<option value="+1">United States</option>
+											<option value="+84">Vietnam</option>
+											<option value="+260">Zambia</option>
+											<option value="+263">Zimbabwe</option>
+										</select>
+									</div>
+
+									<div class="form-group">
+										<label>Post/Zip Code</label> <input type="text" th:field="*{zipcod}"
+											th:classappend="${#fields.hasErrors('zipcod')?'errors':''}" maxlength="10">
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-12 form-fields">
+									<div class="form-group">
+										<label class="required">Preferred Phone Number</label> <select
+											th:field="*{phntyp}" required>
+											<option value="">Select One</option>
+											<option value="HP">Home Phone Number</option>
+											<option value="BP">Business Phone Number</option>
+											<option value="MP">Mobile Number</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="required">Home Phone Number</label>
+										<input type="text" th:field="*{homisdcod}" maxlength="4"
+											class="phone-input isdcod isdcod1" readonly>
+										<input type="text" th:field="*{homarcod}" class="phone-input areacod"
+											maxlength="3">
+										<input type="text" th:field="*{homphnnum}" maxlength="7"
+											class="phone-input phnnum">
+									</div>
+
+									<div class="form-group">
+										<label>Business Phone Number</label>
+										<input type="text" th:field="*{busisdcod}" maxlength="4"
+											class="phone-input isdcod isdcod2" readonly>
+										<input type="text" th:field="*{busarcod}" maxlength="3"
+											class="phone-input areacod">
+										<input type="text" th:field="*{busphnnum}" maxlength="7"
+											class="phone-input phnnum">
+									</div>
+
+									<div class="form-group">
+										<label>Mobile Number</label>
+										<input type="text" th:field="*{mobisdcod}" maxlength="4"
+											class="phone-input isdcod" readonly>
+										<input type="text" th:field="*{mobarcod}" maxlength="3"
+											class="phone-input areacod">
+										<input type="text" th:field="*{mobno}" maxlength="7" class="phone-input phnnum">
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+								<div class="col-12 form-fields">
+									<div class="form-group">
+										<label class="required">Preferred Email Address</label> <select
+											th:field="*{emadrtyp}" required>
+											<option value="">Select One</option>
+											<option value="HE">Home Email Address</option>
+											<option value="BE">Business Email Address</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="required">Home Email Address</label>
+										<input type="text" th:field="*{homemadr}" class="emailField">
+									</div>
+
+									<div class="form-group">
+										<label>Business Email Address</label>
+										<input type="text" th:field="*{busemadr}" class="emailField">
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="toast-container position-fixed top-0 start-50 translate-middle-x">
+								<div id="liveToast" th:classappend="${#fields.hasErrors()?'show':''}"
+									class="toast fade text-bg-danger border-0" role="alert" aria-live="assertive"
+									aria-atomic="true">
+									<div class="toast-header text-bg-danger">
+										<strong class="me-auto">Errors</strong>
+										<button type="button" class="btn-close" data-bs-dismiss="toast"
+											aria-label="Close"></button>
+									</div>
+									<div class="toast-body" th:each="e : ${#fields.errors()}" th:text="${e}">
+
+									</div>
+								</div>
+							</div>
+
+							<div class="toast-container position-fixed top-0 start-50 translate-middle-x">
+								<div id="liveToast" th:if="${errorMessage}"
+									class="toast fade show text-bg-danger border-0" role="alert" aria-live="assertive"
+									aria-atomic="true">
+									<div class="toast-header text-bg-danger">
+										<strong class="me-auto">Errors</strong>
+										<button type="button" class="btn-close" data-bs-dismiss="toast"
+											aria-label="Close"></button>
+									</div>
+									<div class="toast-body" th:text="${errorMessage}">
+
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="text-end">
+									<button type="button" class="btn s1nextBtn">Next</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+					<div class="form form-section preference">
+						<div class="details">
+							<span class="title">Preferences</span>
+							<div class="row rowPref">
+								<div class="col-md-6 colPref">
+									<label class="required">Recieve Digital Advertising</label>
+									<select th:field="*{preferences.digitalAd}" required>
+										<option value="">Select One</option>
+										<option value="Y">Yes</option>
+										<option value="N">No</option>
+									</select>
+								</div>
+								<div class="col-md-6 colPref">
+									<label class="required">Seat Preference</label>
+									<select th:field="*{preferences.seatPref}" required>
+										<option value="">Select One</option>
+										<option value="W">Window</option>
+										<option value="A">Aisle</option>
+										<option value="F">Forward</option>
+										<option value="R">Rear</option>
+										<option value="WF">Window Forward</option>
+										<option value="WR">Window Rear</option>
+										<option value="AF">Aisle Forward</option>
+										<option value="AR">Aisle Rear</option>
+										<option value="FW">Forward Window</option>
+										<option value="FA">Forward Aisle</option>
+										<option value="RW">Rear Window</option>
+										<option value="RA">Rear Aisle</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="row rowPref">
+								<div class="col-md-6 colPref">
+									<label class="required">Preferred Shipping Address</label>
+									<select th:field="*{preferences.shippingAddr}" required>
+										<option value="">Select One</option>
+										<option value="H">Home Address</option>
+										<option value="B">Business Address</option>
+									</select>
+								</div>
+								<div class="col-md-6 colPref">
+									<label class="required">Meal Preference</label>
+									<select th:field="*{preferences.mealPref}" required>
+										<option value="">Select One</option>
+										<option value="VEG">Vegetarian</option>
+										<option value="FP">Fruit Platter</option>
+										<option value="GF">Gluten Free</option>
+										<option value="CM">Children's Meal</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="row rowPref">
+								<div class="col-md-6 colPref">
+									<label class="required">Pajama Size</label>
+									<select th:field="*{preferences.pajamaSize}" required>
+										<option value="">Select One</option>
+										<option value="SM">Small</option>
+										<option value="MD">Medium</option>
+										<option value="LG">Large</option>
+									</select>
+								</div>
+								<div class="col-md-6 colPref">
+									<label class="required">Day Prior Contact Required?</label>
+									<select th:field="*{preferences.dayPriorContact}" required>
+										<option value="">Select One</option>
+										<option value="N">No</option>
+										<option value="S">SMS</option>
+										<option value="E">Email</option>
+									</select>
+								</div>
+							</div>
+
+
+
+						</div>
+					</div>
+
+				</form>
+
+
+				<form id="uploadForm" th:object="${memberDTO}" th:action="@{/airzen/upload}" method="post"
+					enctype="multipart/form-data">
+					<div class="form form-section document">
+						<div class="details">
+							<div class="docTitle">
+								<span class="title col-6">Document Info</span>
+								<div class="addBtn col-6 text-end">
+									<i class="lni lni-upload" id="addDocumentBtn" title="Add Document"></i>
+								</div>
+							</div>
+
+							<table class="table table-bordered" id="documentTable">
+								<thead>
+									<tr>
+										<th>Document Type</th>
+										<th>Document</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- Rows will be added here dynamically -->
+								</tbody>
+							</table>
+
+							<div class="row">
+								<div class="col text-end">
+									<!-- Submit button inside the form -->
+									<button type="submit" class="btn">Upload</button>
+								</div>
+							</div>
+
+							<hr>
+
+							<div class="row">
+								<div class="col-6">
+									<button type="button" class="btn s2backBtn">Back</button>
+								</div>
+								<div class="col text-end">
+									<!-- This is the final "Submit" button -->
+									<button type="submit" form="member-form" class="btn">Submit</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</form>
+
+
+
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="/js/bootstrap-datepicker.js"></script>
+	<script src="/js/homeScripts.js"></script>
+	<script src="/js/memberScripts.js"></script>
+
+</body>
+
+</html>
