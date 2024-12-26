@@ -14,14 +14,14 @@ body {
 }
 
 .loginContainer {
-    width: 360px; /* Reduced width */
+    width: 360px;
     background-color: #fff;
     border-radius: 12px;
-    padding: 20px 30px; /* Reduced padding */
+    padding: 20px 30px;
 }
 
 h1 {
-    font-size: 28px; /* Reduced font size */
+    font-size: 28px;
     text-align: center;
     color: #19A7CE;
 }
@@ -29,8 +29,8 @@ h1 {
 .input-box {
     position: relative;
     width: 100%;
-    height: 45px; /* Reduced height */
-    margin: 20px 0; /* Reduced margin */
+    height: 45px;
+    margin: 20px 0;
 }
 
 input {
@@ -39,10 +39,10 @@ input {
     background: transparent;
     outline: none;
     border: 2px solid #0000001e;
-    border-radius: 30px; /* Reduced border radius */
-    font-size: 14px; /* Reduced font size */
+    border-radius: 30px;
+    font-size: 14px;
     color: #333;
-    padding: 15px 40px 15px 15px; /* Reduced padding */
+    padding: 15px 40px 15px 15px;
 }
 
 input::placeholder {
@@ -51,23 +51,23 @@ input::placeholder {
 
 i {
     position: absolute;
-    right: 15px; /* Adjusted position */
+    right: 15px;
     top: 23%;
     transform: translate(-50%);
-    font-size: 18px; /* Reduced icon size */
+    font-size: 18px;
     color: #333;
 }
 
 .btn {
     width: 100%;
-    height: 40px; /* Reduced height */
+    height: 40px;
     background: #2D9596;
     border: none;
     outline: none;
-    border-radius: 30px; /* Reduced border radius */
-    box-shadow: 0 0 8px rgba(0, 0, 0, .1); /* Adjusted shadow */
+    border-radius: 30px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
     cursor: pointer;
-    font-size: 14px; /* Reduced font size */
+    font-size: 14px;
     color: #fff;
     font-weight: 600;
 }
